@@ -1,0 +1,47 @@
+
+work_dir: ./PAMAP2_workdir/PAMAP2_ChebGCN_Multi_DS
+
+debug: False
+# feeder
+data_path:  /hy-tmp/PAMAP2/{}.npy
+
+
+# model
+model: model.NEWMVUAGCN.ChebGCN3Multi
+
+# pamap2
+model_args:
+  hidden_feats: [18,36,72,36]
+  hidden_feats2: [9,18,36,18]
+  hidden_feats3: [9,18,36,18]
+  out_feats: 12
+feats_split: [18,27]
+
+flag: 3
+Dili: 1
+DS: 1
+
+# gcn
+# model_args:
+#   hidden_feats: [36,72,144,72]
+#   out_feats: 12
+
+
+
+weights: ./PAMAP2_workdir/PAMAP2_ChebGCN_Multi/best_acc_weights.pt
+# optim
+weight_decay: 0.00005
+base_lr: 0.001
+step: [30, 40]
+optimizer : Adam
+lr_decay_rate: 0.0001
+# training
+num_epoch: 60
+
+batch_size: 64
+test_batch_size: 64
+
+nesterov: True
+
+
+

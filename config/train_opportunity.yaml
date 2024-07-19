@@ -1,0 +1,47 @@
+work_dir: ./OPPORTUNITYworkdir/OPPORTUNITY_ChebGCN_DS
+
+debug: False
+# feeder
+data_path:  /hy-tmp/OPPORTUNITY/{}.npy
+
+
+
+
+
+# model
+model: model.NEWMVUAGCN.ChebGCN1
+
+
+# model_args:
+#   hidden_feats: [45,90,180,64]
+#   hidden_feats2: [68,136,272,64]
+#   out_feats: 17
+# feats_split: [45,3]
+
+# gcn
+model_args:
+  hidden_feats: [113,256,180,64]
+  out_feats: 17
+
+flag: 1
+Dili: 1
+DS: 0
+
+
+# weights: ./OPPORTUNITYworkdir/OPPORTUNITY_ChebGCN_Multi_DS/best_acc_weights.pt
+# optim
+weight_decay: 0.00005
+base_lr: 0.001
+step: [30, 40]
+optimizer : Adam
+lr_decay_rate: 0.0001
+# training
+num_epoch: 60
+
+batch_size: 64
+test_batch_size: 64
+
+nesterov: True
+
+
+
